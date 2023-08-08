@@ -1,0 +1,17 @@
+{
+	"name": "topcountriesdeaths",
+	"properties": {
+		"content": {
+			"query": "SELECT TOP 10 countries_and_territories, sum(cases) as sum_cases, sum(deaths) as sum_deaths\nFROM OPENROWSET(\n    BULK 'https://pandemicdatalake.blob.core.windows.net/public/curated/covid-19/ecdc_cases/latest/ecdc_cases.parquet',\n    FORMAT = 'parquet') as rows\nGROUP BY countries_and_territories\nORDER BY sum_cases desc",
+			"metadata": {
+				"language": "sql"
+			},
+			"currentConnection": {
+				"databaseName": "master",
+				"poolName": "Built-in"
+			},
+			"resultLimit": 5000
+		},
+		"type": "SqlQuery"
+	}
+}

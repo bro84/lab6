@@ -1,0 +1,17 @@
+{
+	"name": "lab6exercise2",
+	"properties": {
+		"content": {
+			"query": "-- 1. Find the aggregated cases and deaths globally for each year/month in the dataset. Plot\n-- the data using Area chart type (X axis: year/month, Y axis: number of cases/deaths).\n\n-- SELECT year, month, sum(cases) as sum_cases, sum(deaths) as sum_deaths\n-- FROM OPENROWSET(\n--     BULK 'https://pandemicdatalake.blob.core.windows.net/public/curated/covid-19/ecdc_cases/latest/ecdc_cases.parquet',\n--     FORMAT = 'parquet') as rows\n-- GROUP BY year, month\n-- ORDER BY year, month\n\n\n-- 2. Find top 10 countries by sum of cases. Plot the results for these countries together with\n-- the number of deaths (X axis: country, Y axis: number of cases/deaths). Which country\n-- had the most cases, which had the most deaths?\n\nSELECT TOP 10 countries_and_territories, sum(cases) as cases, sum(deaths) as deaths\nFROM OPENROWSET(\n    BULK 'https://pandemicdatalake.blob.core.windows.net/public/curated/covid-19/ecdc_cases/latest/ecdc_cases.parquet',\n    FORMAT = 'parquet') as rows\nGROUP BY countries_and_territories\nORDER BY deaths desc",
+			"metadata": {
+				"language": "sql"
+			},
+			"currentConnection": {
+				"databaseName": "master",
+				"poolName": "Built-in"
+			},
+			"resultLimit": 5000
+		},
+		"type": "SqlQuery"
+	}
+}

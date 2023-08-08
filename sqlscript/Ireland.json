@@ -1,0 +1,17 @@
+{
+	"name": "Ireland",
+	"properties": {
+		"content": {
+			"query": "-- SELECT CONCAT(month, '/', year) AS date, \n-- SUM(deaths) AS deaths, \n-- SUM(cases) AS cases \n-- FROM OPENROWSET( BULK 'https://pandemicdatalake.blob.core.windows.net/public/curated/covid-19/ecdc_cases/latest/ecdc_cases.parquet', FORMAT = 'parquet' ) \n-- WHERE countries_and_territories = 'Ireland'\n-- GROUP BY month, year \n-- ORDER BY year, month\nSELECT CONCAT(month,'/', year) AS date,\nSUM(deaths) AS deathtoll\nFROM OPENROWSET( BULK 'https://pandemicdatalake.blob.core.windows.net/public/curated/covid-19/ecdc_cases/latest/ecdc_cases.parquet', FORMAT = 'parquet' ) AS [file]\nWHERE countries_and_territories = 'Ireland'\nGROUP BY month, year\nORDER BY year, month",
+			"metadata": {
+				"language": "sql"
+			},
+			"currentConnection": {
+				"databaseName": "master",
+				"poolName": "Built-in"
+			},
+			"resultLimit": 5000
+		},
+		"type": "SqlQuery"
+	}
+}

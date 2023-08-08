@@ -1,0 +1,352 @@
+{
+	"name": "covidnotebkbg",
+	"properties": {
+		"nbformat": 4,
+		"nbformat_minor": 2,
+		"bigDataPool": {
+			"referenceName": "sparkpoolbronac",
+			"type": "BigDataPoolReference"
+		},
+		"sessionProperties": {
+			"driverMemory": "28g",
+			"driverCores": 4,
+			"executorMemory": "28g",
+			"executorCores": 4,
+			"numExecutors": 9,
+			"runAsWorkspaceSystemIdentity": false,
+			"conf": {
+				"spark.dynamicAllocation.enabled": "false",
+				"spark.dynamicAllocation.minExecutors": "9",
+				"spark.dynamicAllocation.maxExecutors": "9",
+				"spark.autotune.trackingId": "8d38a3d0-54cb-4390-bb28-9c844c287f7e"
+			}
+		},
+		"metadata": {
+			"saveOutput": true,
+			"synapse_widget": {
+				"version": "0.1",
+				"state": {
+					"b0ba02c9-7827-4a6c-97c0-82a7a2b9383a": {
+						"type": "Synapse.DataFrame",
+						"sync_state": {
+							"table": {
+								"rows": [
+									{
+										"0": "2019",
+										"1": "12",
+										"2": "27",
+										"3": "0"
+									},
+									{
+										"0": "2020",
+										"1": "1",
+										"2": "9799",
+										"3": "213"
+									},
+									{
+										"0": "2020",
+										"1": "2",
+										"2": "75422",
+										"3": "2708"
+									},
+									{
+										"0": "2020",
+										"1": "3",
+										"2": "723738",
+										"3": "35814"
+									},
+									{
+										"0": "2020",
+										"1": "4",
+										"2": "2083831",
+										"3": "189180"
+									},
+									{
+										"0": "2020",
+										"1": "5",
+										"2": "2824767",
+										"3": "140142"
+									},
+									{
+										"0": "2020",
+										"1": "6",
+										"2": "3536473",
+										"3": "134069"
+									},
+									{
+										"0": "2020",
+										"1": "7",
+										"2": "3462738",
+										"3": "166195"
+									},
+									{
+										"0": "2020",
+										"1": "8",
+										"2": "3444088",
+										"3": "178618"
+									},
+									{
+										"0": "2020",
+										"1": "9",
+										"2": "4129885",
+										"3": "162169"
+									},
+									{
+										"0": "2020",
+										"1": "10",
+										"2": "7598543",
+										"3": "181054"
+									},
+									{
+										"0": "2020",
+										"1": "11",
+										"2": "9939014",
+										"3": "271086"
+									},
+									{
+										"0": "2020",
+										"1": "12",
+										"2": "5024298",
+										"3": "151585"
+									}
+								],
+								"schema": [
+									{
+										"key": "0",
+										"name": "year",
+										"type": "smallint"
+									},
+									{
+										"key": "1",
+										"name": "month",
+										"type": "smallint"
+									},
+									{
+										"key": "2",
+										"name": "sum(cases)",
+										"type": "bigint"
+									},
+									{
+										"key": "3",
+										"name": "sum(deaths)",
+										"type": "bigint"
+									}
+								],
+								"truncated": false
+							},
+							"isSummary": false,
+							"language": "scala"
+						},
+						"persist_state": {
+							"view": {
+								"type": "details",
+								"chartOptions": {
+									"chartType": "bar",
+									"aggregationType": "sum",
+									"categoryFieldKeys": [
+										"1"
+									],
+									"seriesFieldKeys": [
+										"0"
+									],
+									"isStacked": false
+								}
+							}
+						}
+					},
+					"dc89949a-5048-4dd7-bc07-92d3553bd6d6": {
+						"type": "Synapse.DataFrame",
+						"sync_state": {
+							"table": {
+								"rows": [
+									{
+										"0": "BR",
+										"1": "2694729",
+										"2": "181402"
+									},
+									{
+										"0": "RU",
+										"1": "2653928",
+										"2": "46941"
+									},
+									{
+										"0": "US",
+										"1": "2126878",
+										"2": "299177"
+									},
+									{
+										"0": "UK",
+										"1": "1815933",
+										"2": "64170"
+									},
+									{
+										"0": "AR",
+										"1": "1498160",
+										"2": "40766"
+									},
+									{
+										"0": "ES",
+										"1": "1494820",
+										"2": "47624"
+									},
+									{
+										"0": "FR",
+										"1": "1491788",
+										"2": "57911"
+									},
+									{
+										"0": "CO",
+										"1": "1425774",
+										"2": "39053"
+									},
+									{
+										"0": "IT",
+										"1": "1370984",
+										"2": "64520"
+									},
+									{
+										"0": "DE",
+										"1": "1337078",
+										"2": "21975"
+									}
+								],
+								"schema": [
+									{
+										"key": "0",
+										"name": "iso_country",
+										"type": "string"
+									},
+									{
+										"key": "1",
+										"name": "sum_cases",
+										"type": "bigint"
+									},
+									{
+										"key": "2",
+										"name": "sum_deaths",
+										"type": "bigint"
+									}
+								],
+								"truncated": false
+							},
+							"isSummary": false,
+							"language": "scala"
+						},
+						"persist_state": {
+							"view": {
+								"type": "details",
+								"chartOptions": {
+									"chartType": "bar",
+									"aggregationType": "sum",
+									"categoryFieldKeys": [
+										"0"
+									],
+									"seriesFieldKeys": [
+										"1"
+									],
+									"isStacked": false
+								}
+							}
+						}
+					}
+				}
+			},
+			"enableDebugMode": false,
+			"kernelspec": {
+				"name": "synapse_pyspark",
+				"display_name": "Synapse PySpark"
+			},
+			"language_info": {
+				"name": "python"
+			},
+			"a365ComputeOptions": {
+				"id": "/subscriptions/91513211-9c93-47e7-876f-c82ab3a064be/resourceGroups/DataAcademy2023/providers/Microsoft.Synapse/workspaces/synapsebronaclab6/bigDataPools/sparkpoolbronac",
+				"name": "sparkpoolbronac",
+				"type": "Spark",
+				"endpoint": "https://synapsebronaclab6.dev.azuresynapse.net/livyApi/versions/2019-11-01-preview/sparkPools/sparkpoolbronac",
+				"auth": {
+					"type": "AAD",
+					"authResource": "https://dev.azuresynapse.net",
+					"authHeader": null
+				},
+				"sparkVersion": "3.3",
+				"nodeCount": 10,
+				"cores": 4,
+				"memory": 28,
+				"extraHeader": null
+			},
+			"sessionKeepAliveTimeout": 30
+		},
+		"cells": [
+			{
+				"cell_type": "code",
+				"metadata": {
+					"microsoft": {
+						"language": "python"
+					}
+				},
+				"source": [
+					"%%pyspark\r\n",
+					"blob_account_name = \"pandemicdatalake\"\r\n",
+					"blob_container_name = \"public\"\r\n",
+					"blob_relative_path = \"curated/covid-19/ecdc_cases/latest/ecdc_cases.parquet\"\r\n",
+					"blob_sas_token = r\"\"\r\n",
+					"# Allow SPARK to read from Blob remotely\r\n",
+					"wasbs_path = 'wasbs://%s@%s.blob.core.windows.net/%s' % (blob_container_name, blob_account_name, blob_relative_path)\r\n",
+					"\r\n",
+					"spark.conf.set(\r\n",
+					"    'fs.azure.sas.%s.%s.blob.core.windows.net' % (blob_container_name, blob_account_name),\r\n",
+					"    blob_sas_token)\r\n",
+					"df = spark.read.parquet(wasbs_path)"
+				],
+				"execution_count": 1
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					},
+					"collapsed": false
+				},
+				"source": [
+					"df2 = df.select('year', 'month', 'cases', 'deaths')\r\n",
+					"df3 = df2.groupBy('year', 'month').sum('cases', 'deaths')\r\n",
+					"df_excercise_1 = df3.orderBy('year', 'month')\r\n",
+					"display(df_excercise_1.limit(20))"
+				],
+				"execution_count": 2
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					},
+					"collapsed": false
+				},
+				"source": [
+					"df2 = df.select('iso_country', 'cases', 'deaths')\r\n",
+					"df3 = df2.groupBy('iso_country').sum('cases', 'deaths') \\\r\n",
+					"    .withColumnRenamed(\"sum(cases)\", \"sum_cases\") \\\r\n",
+					"    .withColumnRenamed(\"sum(deaths)\", \"sum_deaths\")\r\n",
+					"df_excercise_2 = df3.orderBy('sum_cases', ascending=False)\r\n",
+					"display(df_excercise_2.limit(10))"
+				],
+				"execution_count": 3
+			}
+		]
+	}
+}
